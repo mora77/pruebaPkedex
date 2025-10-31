@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">PruebaPokedex</string>
+    <string name="types_string">Tipos</string>
+    <string name="height_string">Altura</string>
+    <string name="weight_string">Peso</string>
+    <string name="delete_favorites_string">Quitar de favoritos</string>
+    <string name="add_favorites_string">Agregar a favoritos</string>
+    <string name="loading_string">Cargando…</string>
+    <string name="loading_more_string">Cargando más…</string>
+    <string name="error_reload_string">Error al cargar. Desliza para reintentar.</string>
+    <string name="error_reload_more_string">Error al cargar más.</string>
+    <string name="pokemon_random_string">¡Pokémon Random!</string>
+    <string name="pokemon_radar_string">Radar Pokémon</string>
+    <string name="detail_string">Ver detalle</string>
+    <string name="pokemon_found_string">Pokémon encontrado</string>
+    <string name="searching_string">Buscando…</string>
+    <string name="ok_string">OK</string>
+</resources>
