@@ -10,6 +10,9 @@ Aplicación tipo **Pokédex** con:
 ## 📸 Demo
 
 
+https://github.com/user-attachments/assets/4eb03a0d-ee35-4a33-b29e-aadb19f863e5
+
+
 
 ---
 
@@ -38,16 +41,13 @@ domain/...
 ui/...
 theme/...
 res/values/strings.xml
-art/
-demos/ # GIF/MP4 (radar, flujo)
-
 ---
 
 ## 🚀 Requisitos y ejecución
 
 - Android Studio **Ladybug+**
 - JDK **17**
-- `minSdk=24`, `target/compile=35`
+- `minSdk=24`, `target/compile=36`
 
 Permisos en `AndroidManifest.xml`:
 ```xml
@@ -56,10 +56,6 @@ Permisos en `AndroidManifest.xml`:
 <uses-permission android:name="android.permission.VIBRATE"/>
 Build & run:
 
-bash
-Copiar código
-./gradlew :app:assembleDebug
-# O desde Android Studio (Run)
 🔌 API
 PokeAPI pública (no requiere API key): https://pokeapi.co/
 
@@ -81,51 +77,6 @@ Flujos con Kotlin Flow y PagingData
 
 Hilt para DI
 
-🖼️ Cómo capturar e integrar imágenes/GIFs
-Capturas (Android Studio → Device Manager → Take screenshot)
-O con ADB:
-
-bash
-Copiar código
-# Captura screen
-adb exec-out screencap -p > art/screens/list_light.png
-Grabación de pantalla (Android Studio → Screen Record)
-O con ADB:
-
-bash
-Copiar código
-adb shell screenrecord /sdcard/radar.mp4
-# Ctrl+C para detener
-adb pull /sdcard/radar.mp4 art/demos/radar.mp4
-MP4 → GIF (opcional, requiere ffmpeg):
-
-bash
-Copiar código
-ffmpeg -i art/demos/radar.mp4 -vf "fps=12,scale=432:-1:flags=lanczos" -loop 0 art/demos/radar_light.gif
-Optimiza el GIF (opcional):
-
-bash
-Copiar código
-gifsicle -O3 art/demos/radar_light.gif -o art/demos/radar_light.gif
-Insertar en el README:
-
-md
-Copiar código
-![Lista](art/screens/list_light.png)
-
-<p align="center">
-  <img src="art/screens/detail_light.png" width="30%"/>
-  <img src="art/screens/favorites_light.png" width="30%"/>
-</p>
-Si tus GIF/MP4 pesan mucho, considera Git LFS:
-
-bash
-Copiar código
-git lfs track "art/**/*.{gif,mp4}"
-echo "art/**/* filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
-🧭 Uso rápido
-Lista: scroll infinito; tap en ítem → Detalle
-
 Detalle: botón para Agregar/Quitar de favoritos
 
 Radar: al moverte 10 m aparece alerta y vibra. Botón Random siempre disponible.
@@ -136,16 +87,5 @@ Estados de carga/append/error gestionados con Paging LoadState
 Reintentos con scroll/refresh (y manejo básico de excepciones en RemoteMediator/Repo)
 
 🛡️ Licencia
-MIT © TuNombre
+MIT © Brandon Mora Anaya
 
-markdown
-Copiar código
-
----
-
-### Tips extra
-
-- Si vas a **traducir** el README, puedes duplicarlo como `README.es.md` / `README.en.md`.
-- Si quieres **badges** de CI/CD o cobertura, añade tu workflow y ajusta la tabla de badges.
-- ¿Quieres que lo **personalice** con tus capturas reales (nombres exactos) y tu `applicationId`? Pásame los nombres de archivos y te devuelvo el README afinado.
-::contentReference[oaicite:0]{index=0}
